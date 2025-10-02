@@ -290,7 +290,7 @@ if PRODUCTOS and df_productos is not None:
             # Totales con semáforo
             st.markdown(f"""
             <div class='total-box'>
-                <h3>💰 TOTALES DE VENTA</h3>
+                <h4>💰 TOTALES DE VENTA</h4>
                 <p><b>Productos en venta:</b> {len(st.session_state.venta_actual)}</p>
                 <p><b>Cantidad Total:</b> {total_cantidad} unidades</p>
                 <p><b>Venta Total:</b> <span class='result-positive'>${total_ingresos:,.2f}</span></p>
@@ -305,11 +305,11 @@ if PRODUCTOS and df_productos is not None:
                 factura_data.append({
                     "Producto": item['producto'],
                     "Cantidad": item['cantidad'],
-                    "Precio Final Unitario": f"${item['precio_final']:,.2f}",
+                    "Precio Final": f"${item['precio_final']:,.2f}",
                     "Total": f"${total_item:,.2f}"
                 })
             df_factura = pd.DataFrame(factura_data)
-            st.markdown("### 📄 Resumen")
+            st.markdown("#### 📄 Resumen")
             st.table(df_factura)
 
         else:
